@@ -1,0 +1,287 @@
+body{
+    font-size:62.5%;
+    line-height:1.5;
+    font-family: 'Raleway', sans-serif;
+    color:#333;
+    background:#f1f1f1;
+}
+*, *:before, *:after{
+    -webkit-box-siziing:border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+a{
+    color:#00ccff;
+    text-decoration:none;
+    font-size:1.6em;
+}
+a:hover{
+    text-decoration:underline;
+    color:#006666
+}
+.container{
+    max-width:80%;
+    margin:0 auto;
+
+}
+img,
+picture,
+video,
+embed{
+    max-width:100%;
+
+}
+
+.header{
+    min-height:48px;
+    margin: 3.6em 0;
+    box-shadow:1px 1px 10px rgba(124, 124, 124, 0.2);
+    display:flex;
+
+    background:#FFF;
+}
+.logo{
+    float:left;
+    width:20%;
+}
+.menu{
+    width:80%;
+    float:right;
+}
+
+.menu ul{
+    float:right;
+    margin-right:4em;
+}
+.menu li{
+    font-size:1.2em;
+    margin: 3.5em 0 0 2em;
+    display:inline-block;
+}
+.menu li a{
+    color:#999;
+}
+
+.banner{
+    background:url(../img/banner.png) center;
+    background-size:cover;
+    height:450px;
+    margin-bottom:4.8em;
+    position:relative;
+}
+
+.caixa{
+    width:40%;
+    padding: 2.4em 4em;
+    position:absolute;
+    top:48px;
+    background:rgba(0, 0, 0, 0.3);
+}
+
+h1{
+    margin: 0 0;
+    font-size:3em;
+    font-weight:600;
+    color:#FFF;
+}
+.caixa p{
+    font-size:1.8em;
+    font-weight:300;
+    color:#FFF;
+}
+
+.coluna{
+    width:23.5%;
+    float:left;
+    margin-right:2%;
+    box-shadow:1px 1px 10px rgba(124, 124, 124, 0.2);
+    background:#FFF;
+}
+.coluna:last-child{
+    margin-right:0;  
+}
+.coluna img{
+    width:100%;
+}
+h2{
+    font-size:2.4em;
+    font-weight:600;
+}
+p{
+    font-size:1.6em;
+}
+
+.footer{
+    width:100%;
+    margin:2.4em 0;
+    float:left;
+    clear:both;
+
+    background:#FFF;
+    text-align:center;
+    box-shadow:1px 1px 10px rgba(124, 124, 124, 0.2);
+
+}
+
+.footer small{
+    font-size:1.4em;
+}
+.footer a{
+    font-size:1em;
+}
+
+/*CONTENT PAGE */
+.artigo{
+    width:78%;
+    float:left;
+    background:#FFF;
+    min-height:500px;
+    padding:10px 20px;
+    margin-bottom:30px;
+}
+
+.artigo{
+
+}
+
+.sidebar{
+    width:20%;
+    float:right;
+
+}
+.sidebar div:first-child{
+    margin:0;
+}
+.sidebar div{
+    width:100%;
+    margin:20px 0;
+    background:#FFF;
+
+}
+.sidebar div img{
+    width:100%;
+    padding:10px;
+}
+
+.coluna3{
+    width:24.7%;
+    float:left;
+    margin-right:2%;
+    box-shadow:1px 1px 10px rgba(124, 124, 124, 0.2);
+    background:#FFF;
+}
+.coluna3:last-child{
+    margin-right:0;  
+}
+.coluna3 img{
+    width:100%;
+}
+/*CONTENT PAGE */
+
+
+@media screen and (max-width:1128px){
+
+    .container{
+        max-width:95%;
+    }
+}
+
+@media screen and (max-width:768px){
+    .caixa{
+        width:65%;
+    }
+    .coluna{
+        width:49%;
+        margin-bottom:2.4em;
+        margin-right:2%;
+    }
+    .coluna:nth-child(2n+2){
+        margin-right:0;
+    }
+
+    .logo{
+        width:30%;
+        margin-top:1.2em;
+    }
+}
+@media screen and (max-width:718px){
+    .banner{
+        position:relative;
+        float:left;
+        margin:0;
+        height:250px;
+        width:100%;
+    }
+    .caixa{
+        position:relative;
+        display:block;
+        float:left;
+        margin-top:100px;
+        width:100%;
+        background:#000;
+    }
+
+    .caixa h1{
+        font-size:2.5em;
+    }
+    .principal{
+        margin-top:450px;
+    }
+
+}
+
+@media screen and (max-width:640px){
+    .menu{
+        width:100%;
+    }
+    .menu ul{
+        float:left;
+        font-size:0.8em;
+    }
+    .menu li:first-child{
+        margin-left:0;
+    }
+
+    /*    .logo{
+            width:100%;
+        }*/
+}
+
+@media screen and (max-width:520px){
+    .logo{
+        width:100%;
+        display:block;
+    }
+    .header{
+        display:inline-block;
+    }
+    .menu{
+        width:100%;
+        display:block;
+    }
+
+    .coluna{
+        width:100%;
+        margin-right:0;
+    }
+    .caixa{
+        padding: 1.2em 2em;
+    }
+    .caixa{
+        position:relative;
+        display:block;
+        float:left;
+        margin-top:80px;
+        width:100%;
+        background:#000;
+    }
+    .clearfix:before,
+    .clearfix:after{
+        content: " ";
+        display:table;
+    }
+
+    .clearfix:after{
+        clear:both;
+    }
+}
