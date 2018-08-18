@@ -1,125 +1,78 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Aula 04-06</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/normalize.css" />
-        <link rel="stylesheet" href="css/style.css" />
-        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
-        
-        <script src="js/modernizr.js" type="text/javascript"></script>
 
-    </head>
-    <body>
-        <div class="container clearfix">
+<head>
+    <title>Aula 04-06</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
 
-            <header class="header">
-                <img src="img/logo.gif" alt="logo" class="logo" />
-                <nav class="menu">
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Sobre</a></li>
-                        <li><a href="#">Pacotes</a></li>
-                        <li><a href="#">Contato</a></li>
-                    </ul>
-                </nav>
-            </header>
+    <script src="js/modernizr.js" type="text/javascript"></script>
+    <script src="js/script.js" type="text/javascript"></script>
 
-            <section class="principal">
-                
-                
-                <article class="artigo">
-                    <h2>Titulo do filme do youtube</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id placerat orci. 
-                        estibulum vehicula orci neque, cursus volutpat quam maximus non. Cras venenatis ipsum sit a
-                        met molestie porta. Pellentesque venenatis Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id placerat orci. 
-                        estibulum vehicula orci neque, cursus volutpat quam maximus non. Cras venenatis ipsum sit a
-                        met molestie porta. Pellentesque venenatis Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id placerat orci. 
-                        estibulum vehicula orci neque, cursus volutpat quam maximus non. Cras venenatis ipsum sit a
-                        met molestie porta. Pellentesque venenatis
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id placerat orci. 
-                        estibulum vehicula orci neque, cursus volutpat quam maximus non. Cras venenatis ipsum sit a
-                        met molestie porta. Pellentesque venenatis Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id placerat orci. 
-                        estibulum vehicula orci neque, cursus volutpat quam maximus non. Cras venenatis ipsum sit a
-                        met molestie porta. Pellentesque venenatis Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id placerat orci. 
-                        estibulum vehicula orci neque, cursus volutpat quam maximus non. Cras venenatis ipsum sit a
-                        met molestie porta. Pellentesque venenatis
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id placerat orci. 
-                        estibulum vehicula orci neque, cursus volutpat quam maximus non. Cras venenatis ipsum sit a
-                        met molestie porta. Pellentesque venenatis Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id placerat orci. 
-                        estibulum vehicula orci neque, cursus volutpat quam maximus non. Cras venenatis ipsum sit a
-                        met molestie porta. Pellentesque venenatis Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id placerat orci. 
-                        estibulum vehicula orci neque, cursus volutpat quam maximus non. Cras venenatis ipsum sit a
-                        met molestie porta. Pellentesque venenatis
-                    </p>
-                </article>
-                <aside class="sidebar">
-                    <div class="sidebar_artigo">
-                        <img src="img/contentimg.jpg" alt="" />
-                    </div>
-                    <div class="sidebar_artigo">
-                        <img src="img/contentimg.jpg" alt="" />
-                    </div>
-                    <div class="sidebar_artigo">
-                        <img src="img/contentimg.jpg" alt="" />
-                    </div>
-                    <div class="sidebar_artigo">
-                        <img src="img/contentimg.jpg" alt="" />
-                    </div>
-                    <div class="sidebar_artigo">
-                        <img src="img/contentimg.jpg" alt="" />
-                    </div>
-                </aside>
-                
-                
-                <div class="coluna3">
-                    <figure class="foto">
-                        <img src="img/contentimg.jpg" alt="" />
-                    </figure>
-                    <h2>Conheça o Youtube</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id placerat orci. 
-                        estibulum vehicula orci neque, cursus volutpat quam maximus non. Cras venenatis ipsum sit a
-                        met molestie porta. Pellentesque venenatis
-                    </p>
+</head>
+
+<body>
+    <div class="container clearfix">
+
+        <header class="header">
+            <img src="img/logo.gif" alt="logo" class="logo" />
+            <nav class="menu">
+                <input id="link" value="" placeholder="Coloque seu link do youtube aqui">
+                <a onclick="getLink()">Add and Play</a>
+
+                <input id="link2" value="" placeholder="Coloque seu link do youtube aqui">
+                <a onclick="getLink2()">Add and Play</a>
+            </nav>
+            <div class="clear"></div>
+        </header>
+
+        <section class="principal">
+
+
+            <article class="artigo">
+                <!-- <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                </iframe> -->
+
+                <div class="videoArea" id="playerArea"></div>
+
+            </article>
+            <aside class="sidebar">
+                <div class="sidebar_artigo" id="playerArea2">
                 </div>
-
-                <div class="coluna3">
-                    <figure class="foto">
-                        <img src="img/contentimg1.jpg" alt="" />
-                    </figure>
-                    <h2>Conheça o Youtube</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id placerat orci. 
-                        estibulum vehicula orci neque, cursus volutpat quam maximus non. Cras venenatis ipsum sit a
-                        met molestie porta. Pellentesque venenatis
-                    </p>
+                <!-- <div class="sidebar_artigo">
+                    <img src="img/contentimg.jpg" alt="" />
                 </div>
-
-                <div class="coluna3">
-                    <figure class="foto">
-                        <img src="img/contentimg2.jpg" alt="" />
-                    </figure>
-                    <h2>Conheça o Youtube</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur id placerat orci. 
-                        estibulum vehicula orci neque, cursus volutpat quam maximus non. Cras venenatis ipsum sit a
-                        met molestie porta. Pellentesque venenatis
-                    </p>
+                <div class="sidebar_artigo">
+                    <img src="img/contentimg.jpg" alt="" />
                 </div>
-            </section>
+                <div class="sidebar_artigo">
+                    <img src="img/contentimg.jpg" alt="" />
+                </div>
+                <div class="sidebar_artigo">
+                    <img src="img/contentimg.jpg" alt="" />
+                </div> -->
+            </aside>
 
-            <footer class="footer">
-                <!--<img src="img/bad.jpg" alt="" />-->
-                <p>2018 . Rodapé</p>
-            </footer>
 
-        </div>
-    </body>
+            <div class="coluna3">
+                <h2>Clique aqui para mudar de faixa</h2>
+
+                
+               <a href="#"><img src="img/next-youtube.png" ></a>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <!--<img src="img/bad.jpg" alt="" />-->
+            <p>2018 . Rodapé</p>
+        </footer>
+
+    </div>
+
+    
+</body>
+
 </html>
