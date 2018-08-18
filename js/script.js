@@ -44,3 +44,64 @@ function getVideoId(url) {
 //         "/0.jpg");
 //     playerArea2.appendChild(Image);
 // }
+
+/*
+FILAAA
+function Queue() {
+
+    let items = [];
+
+    // adição de novos elementos
+    this.enqueue = function(element){
+        items.push(element);
+    }
+
+    // pegando o primeiro elemento
+    this.dequeue = function(){
+        return items.shift();
+    }
+
+    // apenas olhando o começo da fila, sem retirar
+    this.front = function(){
+        return items[0];
+    }
+
+    this.isEmpty() = function(){
+        return items.length == 0;
+    }
+
+    this.size = function(){
+        return items.length;
+    }
+
+    this.print = function(){
+        console.log(items.toString());
+    }
+
+}
+
+//FILAA 2
+
+//ECMASCRIPT 6
+let QueueWM = (function() {
+    
+    const items = new WeakMap();
+    
+    class QueueWM {
+        constructor() {
+            items.set(this,[]);
+        }
+
+        enqueue(element) {
+            let q = items.get(this);
+        }
+        dequeue() {
+            let q = items.get(this);
+            let r = q.shift();
+            return r;
+        }
+    }   
+    return QueueWM;
+})();
+
+*/

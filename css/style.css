@@ -27,13 +27,14 @@ a:hover{
 img,
 picture,
 video,
-embed{
+embed,
+iframe{
     max-width:100%;
 }
 .header{
     width:100%;
-    min-height:78px;
-    margin: 3.6em 0;
+    min-height:58px;
+    margin: 2em 0;
     box-shadow:1px 1px 10px rgba(124, 124, 124, 0.2);
     display:block;
     background:#FFF;
