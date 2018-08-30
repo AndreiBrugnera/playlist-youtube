@@ -1,7 +1,7 @@
 
 function playInArea(videoId) {
     var playerArea = document.getElementById('playerArea');
-    playerArea.innerHTML = '';
+    //playerArea.innerHTML = '';
     var iFrame = document.createElement('iframe');
     iFrame.setAttribute('id', 'ytplayer');
     iFrame.setAttribute('type', 'text/html');

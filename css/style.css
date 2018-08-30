@@ -184,7 +184,8 @@ p{
 .sidebar{
     width:20%;
     float:right;
-
+    display:block;
+    background:#FFF;
 }
 .sidebar div:first-child{
     margin:0;
