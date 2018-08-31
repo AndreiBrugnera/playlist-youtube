@@ -22,22 +22,19 @@
             <nav class="menu">
                 <input id="link" value="" placeholder="Coloque seu link do youtube aqui" required>
                 <a onclick="getLink()">Add and Play</a>
-                
-                <script>
 
-                    
-                </script>
+
             </nav>
             <div class="clear"></div>
         </header>
 
         <section class="principal">
-            
+
             <!-- BOX GRANDE VIDEO PRINCIPAL -->
             <article class="artigo">
                 <div class="videoArea"></div>
             </article>
-            
+
             <!-- BOX COLUNA LATERAL -->
             <aside class="sidebar">
                 <div class="sidebar_artigo" id="playerArea">
@@ -46,9 +43,10 @@
 
             <div class="coluna3">
                 <h2>Clique aqui para mudar de faixa</h2>
-               <a href="#"><img src="img/next-youtube.png" ></a>
+                <button onclick="play()">++</button>
+                <a href="#" onclick="play()"><img src="img/next-youtube.png"></a>
             </div>
-            
+
         </section>
 
         <footer class="footer">
@@ -58,7 +56,59 @@
 
     </div>
 
-    
+    <script>
+        fila = new Queue();
+
+
+        function playInArea(videoId) {
+            var playerArea = document.getElementById('playerArea');
+            var iFrame = document.createElement('iframe');
+            iFrame.setAttribute('id', 'ytplayer');
+            iFrame.setAttribute('type', 'text/html');
+            iFrame.setAttribute('width', 340);
+            iFrame.setAttribute('height', 220);
+            iFrame.setAttribute('src',
+                'http://www.youtube.com/embed/' +
+                videoId +
+                "?autoplay=0");
+            iFrame.setAttribute('frameborder', 0);
+            fila.enqueue(videoId);
+            playerArea.appendChild(iFrame);
+        }
+
+        function playInArea2(videoId) {
+            var playerArea2 = document.getElementById('videoArea');
+            var iFrame = document.createElement('iframe');
+            iFrame.setAttribute('id', 'ytplayer');
+            iFrame.setAttribute('type', 'text/html');
+            iFrame.setAttribute('width', 340);
+            iFrame.setAttribute('height', 220);
+            iFrame.setAttribute('src',
+                'http://www.youtube.com/embed/' +
+                videoId +
+                "?autoplay=1");
+            iFrame.setAttribute('frameborder', 0);
+            playerArea2.appendChild(iFrame);
+        }
+        function getLink() {
+
+            var linka = document.getElementById('link');
+            var videoId = getVideoId(linka.value);
+            playInArea(videoId);
+        }
+        function play() {
+            var primeira = fila.front().value;
+            fila.dequeue();
+            playInArea2(primeira);
+
+        }
+
+        function getVideoId(url) {
+            return url.substring(
+                url.indexOf("=") + 1,
+                url.length);
+        }
+    </script>
 </body>
 
 </html>

@@ -1,32 +1,6 @@
 
 
-    function playInArea(videoId) {
-        var playerArea = document.getElementById('playerArea');
-//    playerArea.innerHTML = '';
-        var iFrame = document.createElement('iframe');
-        iFrame.setAttribute('id', 'ytplayer');
-        iFrame.setAttribute('type', 'text/html');
-        iFrame.setAttribute('width', 340);
-        iFrame.setAttribute('height', 220);
-        iFrame.setAttribute('src',
-                'http://www.youtube.com/embed/' +
-                videoId +
-                "?autoplay=1");
-        iFrame.setAttribute('frameborder', 0);
-        playerArea.appendChild(iFrame);
-
-    }
-    function getLink() {
-        var linka = document.getElementById('link');
-        var videoId = getVideoId(linka.value);
-        playInArea(videoId);
-    }
-
-    function getVideoId(url) {
-        return url.substring(
-                url.indexOf("=") + 1,
-                url.length);
-    }
+ 
 
 function Queue() {
     let items = [];
