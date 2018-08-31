@@ -78,6 +78,7 @@
 
             function playInArea2(videoId) {
                 var playInArea2 = document.getElementById('playInArea2');
+                playInArea2.innerHTML = '';
                 var iFrame = document.createElement('iframe');
                 iFrame.setAttribute('id', 'ytplayer2');
                 iFrame.setAttribute('type', 'text/html');
@@ -86,7 +87,7 @@
                 iFrame.setAttribute('src',
                         'http://www.youtube.com/embed/' +
                         videoId +
-                        "?autoplay=0");
+                        "?autoplay=1");
                 iFrame.setAttribute('frameborder', 0);
                 fila.enqueue(videoId);
                 playInArea2.appendChild(iFrame);
