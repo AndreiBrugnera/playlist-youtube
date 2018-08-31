@@ -1,114 +1,116 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title>YouTube contrata Nois!</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
+    <head>
+        <title>YouTube contrata Nois!</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/normalize.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
 
-    <!--<script src="js/modernizr.js" type="text/javascript"></script>-->
-    <script src="js/script.js" type="text/javascript"></script>
+        <!--<script src="js/modernizr.js" type="text/javascript"></script>-->
+        <script src="js/script.js" type="text/javascript"></script>
 
-</head>
+    </head>
 
-<body>
-    <div class="container clearfix">
+    <body>
+        <div class="container clearfix">
 
-        <header class="header">
-            <img src="img/logo.gif" alt="logo" class="logo" />
-            <nav class="menu">
-                <input id="link" value="" placeholder="Coloque seu link do youtube aqui" required>
-                <a onclick="getLink()">Add and Play</a>
+            <header class="header">
+                <img src="img/logo.gif" alt="logo" class="logo" />
+                <nav class="menu">
+                    <input id="link" value="" placeholder="Coloque seu link do youtube aqui" required>
+                    <a onclick="getLink()">Add and Play</a>
 
 
-            </nav>
-            <div class="clear"></div>
-        </header>
+                </nav>
+                <div class="clear"></div>
+            </header>
 
-        <section class="principal">
+            <section class="principal">
 
-            <!-- BOX GRANDE VIDEO PRINCIPAL -->
-            <article class="artigo">
-                <div class="videoArea"></div>
-            </article>
+                <!-- BOX GRANDE VIDEO PRINCIPAL -->
+                <article class="artigo">
+                    <div class="videoArea" id="playInArea2">
+                    </div>
+                </article>
 
-            <!-- BOX COLUNA LATERAL -->
-            <aside class="sidebar">
-                <div class="sidebar_artigo" id="playerArea">
+                <!-- BOX COLUNA LATERAL -->
+                <aside class="sidebar">
+                    <div class="sidebar_artigo" id="playInArea">
+                    </div>
+                </aside>
+
+                <div class="coluna3">
+                    <h2>Clique aqui para mudar de faixa</h2>
+                    <!--<button onclick="play()">++</button>-->
+                    <a href="#ytplayer" onclick="play()"><img src="img/next-youtube.png"></a>
                 </div>
-            </aside>
 
-            <div class="coluna3">
-                <h2>Clique aqui para mudar de faixa</h2>
-                <button onclick="play()">++</button>
-                <a href="#" onclick="play()"><img src="img/next-youtube.png"></a>
-            </div>
+            </section>
 
-        </section>
+            <footer class="footer">
+                <!--<img src="img/bad.jpg" alt="" />-->
+                <p>2018 . Rodapé</p>
+            </footer>
 
-        <footer class="footer">
-            <!--<img src="img/bad.jpg" alt="" />-->
-            <p>2018 . Rodapé</p>
-        </footer>
+        </div>
 
-    </div>
+        <script>
+            fila = new Queue();
 
-    <script>
-        fila = new Queue();
+            function playInArea(videoId) {
+                var playInArea = document.getElementById('playInArea');
+                var iFrame = document.createElement('iframe');
+                iFrame.setAttribute('id', 'ytplayer');
+                iFrame.setAttribute('type', 'text/html');
+                iFrame.setAttribute('width', 340);
+                iFrame.setAttribute('height', 220);
+                iFrame.setAttribute('src',
+                        'http://www.youtube.com/embed/' +
+                        videoId +
+                        "?autoplay=0");
+                iFrame.setAttribute('frameborder', 0);
+                fila.enqueue(videoId);
+                playInArea.appendChild(iFrame);
+            }
+
+            function playInArea2(videoId) {
+                var playInArea2 = document.getElementById('playInArea2');
+                var iFrame = document.createElement('iframe');
+                iFrame.setAttribute('id', 'ytplayer2');
+                iFrame.setAttribute('type', 'text/html');
+                iFrame.setAttribute('width', 740);
+                iFrame.setAttribute('height', 420);
+                iFrame.setAttribute('src',
+                        'http://www.youtube.com/embed/' +
+                        videoId +
+                        "?autoplay=0");
+                iFrame.setAttribute('frameborder', 0);
+                fila.enqueue(videoId);
+                playInArea2.appendChild(iFrame);
+            }
+            function getLink() {
+                var linka = document.getElementById('link');
+                var videoId = getVideoId(linka.value);
+                playInArea(videoId);
+            }
+            function play() {
+                var primeira = fila.front();
+                fila.dequeue();
+                playInArea2(primeira);
+                console.log(primeira);
+
+            }
+            function getVideoId(url) {
+                return url.substring(
+                        url.indexOf("=") + 1,
+                        url.length);
+            }
 
 
-        function playInArea(videoId) {
-            var playerArea = document.getElementById('playerArea');
-            var iFrame = document.createElement('iframe');
-            iFrame.setAttribute('id', 'ytplayer');
-            iFrame.setAttribute('type', 'text/html');
-            iFrame.setAttribute('width', 340);
-            iFrame.setAttribute('height', 220);
-            iFrame.setAttribute('src',
-                'http://www.youtube.com/embed/' +
-                videoId +
-                "?autoplay=0");
-            iFrame.setAttribute('frameborder', 0);
-            fila.enqueue(videoId);
-            playerArea.appendChild(iFrame);
-        }
-
-        function playInArea2(videoId) {
-            var playerArea2 = document.getElementById('videoArea');
-            var iFrame = document.createElement('iframe');
-            iFrame.setAttribute('id', 'ytplayer');
-            iFrame.setAttribute('type', 'text/html');
-            iFrame.setAttribute('width', 340);
-            iFrame.setAttribute('height', 220);
-            iFrame.setAttribute('src',
-                'http://www.youtube.com/embed/' +
-                videoId +
-                "?autoplay=1");
-            iFrame.setAttribute('frameborder', 0);
-            playerArea2.appendChild(iFrame);
-        }
-        function getLink() {
-
-            var linka = document.getElementById('link');
-            var videoId = getVideoId(linka.value);
-            playInArea(videoId);
-        }
-        function play() {
-            var primeira = fila.front().value;
-            fila.dequeue();
-            playInArea2(primeira);
-
-        }
-
-        function getVideoId(url) {
-            return url.substring(
-                url.indexOf("=") + 1,
-                url.length);
-        }
-    </script>
-</body>
+        </script>
+    </body>
 
 </html>

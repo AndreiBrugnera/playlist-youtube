@@ -34,10 +34,10 @@ function Queue() {
 
 }
 
-const p = new Queue();
-p.enqueue(2);
-p.enqueue(1);
-p.print();
+//const p = new Queue();
+//p.enqueue(2);
+//p.enqueue(1);
+//p.print();
 
 //
 //function Queuee() {
